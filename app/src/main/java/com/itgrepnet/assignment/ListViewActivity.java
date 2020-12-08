@@ -10,17 +10,23 @@ public class ListViewActivity extends AppCompatActivity {
 
     ListView listViewData;
 
-    // Array of strings...
-    String[] objects = {"House","Dog","Flower","Computer","School","Book"};
+    String[] mainTitle = {"House","Dog","Flower","Computer","School","Book"};
+
+    String[] subTitle = {"Sub Title 1", "Sub Title 2", "Sub Title 3", "Sub Title 4", "Sub Title 5", "Sub Title 6"};
+
+    Integer[] imageId={
+            R.drawable.house,R.drawable.dog,
+            R.drawable.flower,R.drawable.computer,
+            R.drawable.school,R.drawable.book
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.activity_listview_item, objects);
-
         listViewData = findViewById(R.id.listViewData);
+        MyListViewAdapter adapter = new MyListViewAdapter(this, mainTitle, subTitle, imageId);
         listViewData.setAdapter(adapter);
     }
 }
