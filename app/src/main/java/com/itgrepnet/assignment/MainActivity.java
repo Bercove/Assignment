@@ -60,9 +60,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             MainActivity.this.startActivity(myIntent);
         }
     }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }
